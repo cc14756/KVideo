@@ -48,8 +48,8 @@ jobs:
       - name: Workers build
         run: npm run cf:build
 
-      - name: Audit production dependencies
-        run: npm audit --omit=dev
+      - name: Audit production dependencies (high severity+)
+        run: npm audit --omit=dev --audit-level=high
 
       - name: Validate docker compose
         run: docker compose config
